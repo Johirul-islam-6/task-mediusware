@@ -3,7 +3,7 @@ import useTitle from '../../hook/useTitle';
 
 const ProblemTwo = () => {
 
-
+    // Main Modal list
     const [showModalA, setShowModalA] = useState(false);
     const [showModalB, setShowModalB] = useState(false);
 
@@ -12,25 +12,45 @@ const ProblemTwo = () => {
         setShowModalA(true)
 
     }
-    // Us contact btn
+    // all contacct btn
     const UsContact = () => {
         setShowModalB(true)
 
     }
 
+    // get data api
+    const [AllcontactData, setAllContactData] = useState();
+    const [UsContacts, setusContact] = useState();
+    const [singelContact, setsingelContact] = useState();
+
+    // Dynamic Modal Data lode all Modal list
+    const [ModalA, setModalA] = useState(false);
+    const [ModalB, setModalB] = useState(false);
+    const [ModalC, setModalC] = useState(false);
+
+
+
+    // all contact btn to get api data resive
+    useEffect(() => {
+        fetch(`https://contact.mediusware.com/api/contacts/`)
+            .then(res => res.json())
+            .then(data => setAllContactData(data?.results))
+    }, [])
+
 
 
     //Modal A Clicking Btn to daynamic Data loade
     const allContacts = () => {
-
+        setModalA(true)
 
     }
     //Modal A Clicking Btn to daynamic Data loade
     const usContacts = () => {
-
+        setModalB(true)
+        const usContacts = AllcontactData.filter(Us => Us?.country?.name === "United States")
+        setusContact(usContacts)
 
     }
-
 
 
 
