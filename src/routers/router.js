@@ -30,7 +30,6 @@ const router = createBrowserRouter([
             {
                 path: '/country/:id',
                 element: <Countrys />,
-                // loader: ({ params }) => fetch(`https://contact.mediusware.com/api/country-contacts/${params.id}`)
 
             },
 
