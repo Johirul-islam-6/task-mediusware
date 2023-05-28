@@ -258,6 +258,7 @@ const ProblemTwo = () => {
                                     {/* input serch bar */}
 
                                     <form onChange={handelSubmitbtn}>
+                                        <p className='pt-2 text-center text-[15px]'>Bangladesh, United States, Ireland, Germany, Russia, Myanmar,Ghana,Iran,Kuwait, Oman, etc</p>
                                         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                                         <div class="relative">
                                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -331,6 +332,26 @@ const ProblemTwo = () => {
                                     </div>
 
                                     <h1 className='text-center text-black text-2xl font-bold'>This is Modal B .  All US Contacts List</h1>
+
+
+                                    {/* input serch bar */}
+
+                                    <form onChange={handelSubmitbtn}>
+                                        <p className='pt-2 text-center text-[15px]'>Bangladesh, United States, Ireland, Germany, Russia, Myanmar,Ghana,Iran,Kuwait, Oman, etc</p>
+                                        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                                        <div class="relative">
+                                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                                            </div>
+                                            <input onChange={(e) => inputTextField(e?.target?.value)} name='input' type="search" id="default-search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400
+                                             dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-4" placeholder="countrie name _ ex: Bangladesh" required />
+                                            <Link to={`/country/${inputTextValue}`} type="submit" class="text-white absolute 
+                                            right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</Link>
+
+                                        </div>
+                                    </form>
+
+
 
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-5 justify-center mt-10 pb-8">
 
