@@ -5,6 +5,7 @@ import Login from "../Login_Registration/Login";
 import Registrar from "../Login_Registration/Registrar";
 import ErrorPage from "../Login_Registration/ErrorPage";
 import ProblemTwo from "../Pages/problem-1/ProblemTwo";
+import Countrys from "../Pages/Countrys/Countrys";
 
 
 
@@ -26,16 +27,12 @@ const router = createBrowserRouter([
             },
 
 
-            // {
-            //     path: '/update/:id',
-            //     element: <UpdatePage></UpdatePage>,
-            //     loader: ({ params }) => fetch(`https://assignment-server-site-10.vercel.app/all-reviews/${params.id}`)
+            {
+                path: '/country/:id',
+                element: <Countrys />,
+                // loader: ({ params }) => fetch(`https://contact.mediusware.com/api/country-contacts/${params.id}`)
 
-            // },
-            // {
-            //     path: '/add-services',
-            //     element: (<PrivetRoute><AddServices></AddServices></PrivetRoute>),
-            // },
+            },
 
             {
                 path: '/registrar',

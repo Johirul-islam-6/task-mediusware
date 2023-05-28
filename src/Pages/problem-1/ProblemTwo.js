@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import useTitle from '../../hook/useTitle';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ProblemTwo = () => {
+
+    const router = useNavigate()
 
     // Main Modal list
     const [showModalA, setShowModalA] = useState(false);
@@ -21,6 +24,7 @@ const ProblemTwo = () => {
     // get data api
     const [AllcontactData, setAllContactData] = useState();
     const [UsContacts, setusContact] = useState();
+    const [inputTextValue, setinputTextValue] = useState();
     const [singelContact, setsingelContact] = useState();
 
     // Dynamic Modal Data lode all Modal list
@@ -29,7 +33,7 @@ const ProblemTwo = () => {
     const [ModalC, setModalC] = useState(false);
 
 
-
+    // https://contact.mediusware.com/api/country-contacts/Bangladesh/
     // all contact btn to get api data resive
     useEffect(() => {
         fetch(`https://contact.mediusware.com/api/contacts/`)
@@ -62,6 +66,25 @@ const ProblemTwo = () => {
 
 
 
+    // sumbimt form
+
+    //all from submition
+    const handelSubmitbtn = (event) => {
+
+        event.preventDefault()
+
+        //all input field
+        const from = event?.target;
+        const inputText = from?.input?.value;
+        console.log(inputText)
+        setinputTextValue(inputText)
+        // from.reset('')
+
+
+    }
+
+
+    console.log(inputTextValue)
     return (
         <div className="h-[100vh] bg-gray-400 w-[100%] pt-[10%]">
             <div className="grid md:grid-cols-2 grid-cols-1 justify-center items-center">
@@ -207,7 +230,7 @@ const ProblemTwo = () => {
                         iv
                         className="justify-center w-[100%]  mx-auto items-center  md:flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none "
                     >
-                        <div className="relative z-[50] mx-auto max-w-3xl md:mt-[35%] mt-20 w-[100%] ">
+                        <div className="relative z-[50] mx-auto max-w-3xl md:mt-[38%] mt-20 w-[100%] ">
                             {/*content*/}
                             <div >
                                 <div className="border-0 rounded-lg shadow-lg relative flex flex-col h-[auto] px-10  bg-white outline-none focus:outline-none w-[100%]">
@@ -226,6 +249,24 @@ const ProblemTwo = () => {
                                         </button>
                                     </div>
                                     <h1 className='text-center text-black text-2xl font-bold'>This is modal A . All Contacts List</h1>
+
+                                    {/* input serch bar */}
+
+                                    <form onSubmit={handelSubmitbtn}>
+                                        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                                        <div class="relative">
+                                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                                            </div>
+                                            <input name='input' type="search" id="default-search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400
+                                             dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-4" placeholder="countrie name _ ex: Bangladesh" required />
+                                            <Link to={`/country/${inputTextValue}`} type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</Link>
+                                            {/* <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button> */}
+                                        </div>
+                                    </form>
+
+
+
 
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-5 justify-center mt-10 pb-8">
 
