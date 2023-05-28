@@ -52,6 +52,11 @@ const ProblemTwo = () => {
 
     }
 
+    // singel Contact 
+    const singelContactBtn = (contact) => {
+
+    }
+
 
 
     return (
@@ -173,6 +178,125 @@ const ProblemTwo = () => {
                                             </label>
                                             <button onClick={() => setShowModalB(false)} className="btn bg-[#ffffff] text-[#46139f] hover:bg-[#e6dddd]">Closing</button>
                                         </div>
+
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </d>
+                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                </>
+                    : null
+            }
+
+
+            {/* <=============== children modal ====================> */}
+
+            {/* Modal = A */}
+            {
+                ModalA ? <>
+                    <d
+                        iv
+                        className="justify-center w-[100%]  mx-auto items-center  md:flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none "
+                    >
+                        <div className="relative z-[50] mx-auto max-w-3xl md:mt-[35%] mt-20 w-[100%] ">
+                            {/*content*/}
+                            <div >
+                                <div className="border-0 rounded-lg shadow-lg relative flex flex-col h-[auto] px-10  bg-white outline-none focus:outline-none w-[100%]">
+                                    {/*header*/}
+                                    <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+                                        <h3 className="text-3xl font-semibold text-black">
+                                            Medius<span className="text-blue-600">ware</span>
+                                        </h3>
+                                        <button
+                                            className="p-1   ml-auto border-0 text-black opacity-1 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                            onClick={() => setModalA(false)}
+                                        >
+                                            <span className=" text-red-800  h-7 w-8 text-[32px] block outline-none focus:outline-none">
+                                                ×
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <h1 className='text-center text-black text-2xl font-bold'>This is modal A . All Contacts List</h1>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 justify-center mt-10 pb-8">
+
+                                        {
+                                            AllcontactData?.map(contact => {
+                                                return <>
+                                                    <div className="card px-2 py-1 flex justify-center bg-purple-800">
+                                                        <p>country Name : {contact?.country?.name}</p>
+                                                        <p>phone : {contact?.phone} </p>
+                                                        <div className="flex justify-center mt-3">
+                                                            <button onClick={() => singelContactBtn(contact)} className='px-1 py-1 bg-blue-600 text-white w-[100%] rounded-md'>Details</button>
+                                                        </div>
+                                                    </div>
+                                                </>
+                                            })
+                                        }
+
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </d>
+                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                </>
+                    : null
+            }
+            {/* Modal = B */}
+            {
+                ModalB ? <>
+                    <d
+                        iv
+                        className="justify-center w-[100%]  mx-auto items-center  md:flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none "
+                    >
+                        <div className="relative z-[50] mx-auto max-w-3xl md:mt-56 mt-20 w-[100%] ">
+                            {/*content*/}
+                            <div >
+                                <div className="border-0 rounded-lg shadow-lg relative flex flex-col h-[auto] px-10  bg-white outline-none focus:outline-none w-[100%]">
+                                    {/*header*/}
+                                    <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+                                        <h3 className="text-3xl font-semibold text-black">
+                                            Medius<span className="text-blue-600">ware</span>
+                                        </h3>
+                                        <button
+                                            className="p-1   ml-auto border-0 text-black opacity-1 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                            onClick={() => setModalB(false)}
+                                        >
+                                            <span className=" text-red-800  h-7 w-8 text-[32px] block outline-none focus:outline-none">
+                                                ×
+                                            </span>
+                                        </button>
+                                    </div>
+
+                                    <h1 className='text-center text-black text-2xl font-bold'>This is Modal B .  All US Contacts List</h1>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 justify-center mt-10 pb-8">
+
+                                        {
+                                            UsContacts?.map(contact => {
+                                                return <>
+                                                    <div className="card px-2 py-1 flex justify-center bg-purple-800">
+                                                        <p>country Name : {contact?.country?.name}</p>
+                                                        <p>phone : {contact?.phone} </p>
+                                                        <div className="flex justify-center mt-3">
+                                                            <button onClick={() => singelContactBtn(contact)} className='px-1 py-1 bg-blue-600 text-white w-[100%] rounded-md'>Details</button>
+                                                        </div>
+                                                    </div>
+                                                </>
+                                            })
+                                        }
 
                                     </div>
 
