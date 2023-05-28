@@ -36,6 +36,7 @@ const Home = () => {
         const allData = userAllData.sort((a, b) => {
             if (a.name < b.name) return -1;
             if (a.name > b.name) return 1;
+
             return 0;
         });
         setActiveStatus(allData)
@@ -60,7 +61,7 @@ const Home = () => {
         } else if (status === "completed") {
             console.log("Completed")
         } else {
-            return alert('Write a valid status as active Or completed !')
+            alert('This is another status = panding')
         }
 
         const inputValue = {
@@ -123,7 +124,17 @@ const Home = () => {
                                 activeStatus?.map(data => {
                                     return <>
                                         <div className="content p-3 bg-[#2167f3] mt-3 flex justify-between">
-                                            <h3 className=' text-white'>Name : {data?.name}   <span className='ml-4 text-white font-bold badge badge-accent py-3'> status : {data?.status}  </span> </h3>
+
+
+                                            {
+                                                data?.status === "active" || data?.status === "completed" ? <>
+                                                    <h3 className=' text-white'>Name : {data?.name}   <span className='ml-4 text-white font-bold badge badge-accent py-3'> status : {data?.status}  </span> </h3>
+                                                </> : <>
+                                                    <h3 className=' text-white'>Name : {data?.name}   <span className='ml-4 text-white font-bold badge badge-accent py-3'> status :  panding  </span> </h3>
+
+                                                </>
+                                            }
+
                                         </div>
                                     </>
                                 })
