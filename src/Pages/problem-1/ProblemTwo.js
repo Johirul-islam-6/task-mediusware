@@ -33,7 +33,7 @@ const ProblemTwo = () => {
     const [ModalC, setModalC] = useState(false);
 
 
-    // https://contact.mediusware.com/api/country-contacts/Bangladesh/
+
     // all contact btn to get api data resive
     useEffect(() => {
         fetch(`https://contact.mediusware.com/api/contacts/`)
@@ -81,10 +81,6 @@ const ProblemTwo = () => {
         //all input field
         const from = event?.target;
         const inputText = from?.input?.value;
-
-
-        // from.reset('')
-
 
     }
 

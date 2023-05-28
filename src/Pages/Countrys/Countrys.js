@@ -10,11 +10,6 @@ const Countrys = () => {
     const [loding, setLodaing] = useState(true);
 
 
-    // useEffect(() => {
-    //     fetch(`https://contact.mediusware.com/api/country-contacts/${id}`)
-    //         .then(res => res.json())
-    //         .then(data => console.log("data", data))
-    // }, [])
 
     useEffect(() => {
         fetch(`https://contact.mediusware.com/api/country-contacts/${id}/`)
