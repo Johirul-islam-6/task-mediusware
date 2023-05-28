@@ -4,7 +4,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Login_Registration/Login";
 import Registrar from "../Login_Registration/Registrar";
 import ErrorPage from "../Login_Registration/ErrorPage";
-import Services from "../Pages/AllServices/Services";
+import ProblemTwo from "../Pages/problem-1/ProblemTwo";
 
 
 
@@ -21,8 +21,8 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: '/serveces',
-                element: <Services></Services>
+                path: '/problem-2',
+                element: <ProblemTwo></ProblemTwo>
             },
 
 

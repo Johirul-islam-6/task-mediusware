@@ -37,7 +37,8 @@ const Header = () => {
                         </label>
                         <ul tabIndex={0} className="lg-header  menu mt-5 dropdown-content shadow bg-white rounded-box px-20  lg:hidden ">
 
-                            <Link to='/' className='btn '>Home</Link>
+                            <Link to='/' className='btn '>problem-1</Link>
+                            <Link to='/problem-2' className='btn ml-6'>problem-2</Link>
 
 
                             {
@@ -72,8 +73,8 @@ const Header = () => {
 
                         <ul className="lg-header menu menu-horizontal p-0 pr-5">
 
-                            <Link to='/' className='btn '>Home</Link>
-                            <Link to='/serveces' className='btn ml-6'>services</Link>
+                            <Link to='/' className='btn '>problem-1</Link>
+                            <Link to='/problem-2' className='btn ml-6'>problem-2</Link>
 
 
                             {
