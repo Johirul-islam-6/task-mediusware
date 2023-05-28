@@ -54,7 +54,10 @@ const ProblemTwo = () => {
 
     // singel Contact 
     const singelContactBtn = (contact) => {
-
+        setModalC(true)
+        setModalA(false)
+        setModalB(false)
+        setsingelContact(contact)
     }
 
 
@@ -103,19 +106,19 @@ const ProblemTwo = () => {
                                             <label className="label">
                                                 <span className="label-text  text-[#46139f]">All Contacts</span>
                                             </label>
-                                            <button onClick={allContacts} className="btn hover:bg-[#04a771]  text-[#46139f] bg-[#ffffff]">Modal A</button>
+                                            <button onClick={allContacts} className="btn  bg-[#ffffff] text-[#46139f] border-2 border-[#46139f] hover:bg-[#139e97]">Modal A</button>
                                         </div>
                                         <div className="form-control">
                                             <label className="label">
                                                 <span className="label-text  text-[#7808c8]">US Contacts</span>
                                             </label>
-                                            <button onClick={usContacts} className="btn hover:bg-[#028dc0] bg-[#96a4bf] text-[#7808c8]">Modal B</button>
+                                            <button onClick={usContacts} className="btn hover:bg-[#028dc0] bg-[#2669f0] text-[#7808c8]">Modal B</button>
                                         </div>
                                         <div className="form-control">
                                             <label className="label">
                                                 <span className="label-text text-[#46139f]">Close</span>
                                             </label>
-                                            <button onClick={() => setShowModalA(false)} className="btn bg-[#ffffff] text-[#46139f] hover:bg-[#e6dddd]">Closing</button>
+                                            <button onClick={() => setShowModalA(false)} className="btn bg-[#ffffff] text-[#46139f] border-2 border-[#46139f] hover:bg-[#139e97]">Closing</button>
                                         </div>
 
                                     </div>
@@ -164,19 +167,19 @@ const ProblemTwo = () => {
                                             <label className="label">
                                                 <span className="label-text  text-[#46139f]">All Contacts</span>
                                             </label>
-                                            <button onClick={allContacts} className="btn hover:bg-[#04a771]  text-[#46139f] bg-[#ffffff]">Modal A</button>
+                                            <button onClick={allContacts} className="btn  bg-[#ffffff] text-[#46139f] border-2 border-[#46139f] hover:bg-[#139e97]">Modal A</button>
                                         </div>
                                         <div className="form-control">
                                             <label className="label">
                                                 <span className="label-text  text-[#7808c8]">US Contacts</span>
                                             </label>
-                                            <button onClick={usContacts} className="btn hover:bg-[#028dc0] bg-[#96a4bf] text-[#7808c8]">Modal B</button>
+                                            <button onClick={usContacts} className="btn hover:bg-[#028dc0] bg-[#2669f0] text-[#7808c8]">Modal B</button>
                                         </div>
                                         <div className="form-control">
                                             <label className="label">
                                                 <span className="label-text text-[#46139f]">Close</span>
                                             </label>
-                                            <button onClick={() => setShowModalB(false)} className="btn bg-[#ffffff] text-[#46139f] hover:bg-[#e6dddd]">Closing</button>
+                                            <button onClick={() => setShowModalB(false)} className="btn bg-[#ffffff] text-[#46139f] border-2 border-[#46139f] hover:bg-[#139e97]">Closing</button>
                                         </div>
 
                                     </div>
@@ -297,6 +300,55 @@ const ProblemTwo = () => {
                                                 </>
                                             })
                                         }
+
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </d>
+                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                </>
+                    : null
+            }
+            {/* Modal = C */}
+            {
+                ModalC ? <>
+                    <d
+                        iv
+                        className="justify-center w-[100%]  mx-auto items-center  md:flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none "
+                    >
+                        <div className="relative z-[50] mx-auto max-w-3xl md:mt-[5%]  mt-20 w-[100%] ">
+                            {/*content*/}
+                            <div >
+                                <div className="border-0 rounded-lg shadow-lg relative flex flex-col h-[70vh] px-10  bg-white outline-none focus:outline-none w-[100%]">
+                                    {/*header*/}
+                                    <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+                                        <h3 className="text-3xl font-semibold text-black">
+                                            Medius<span className="text-blue-600">ware</span>
+                                        </h3>
+                                        <button
+                                            className="p-1  ml-auto border-0 text-black opacity-1 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                            onClick={() => setModalC(false)}
+                                        >
+                                            <span className=" text-red-800  h-7 w-8 text-[32px] block outline-none focus:outline-none">
+                                                ×
+                                            </span>
+                                        </button>
+                                    </div>
+
+                                    <h1 className='text-center text-black text-2xl font-bold'>Open Modal C. Singel Contacts Details</h1>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-1 gap-5 justify-center mt-10 pb-8">
+
+                                        <div className="card px-2 py-1 flex justify-center">
+                                            <p className='text-center text-black'>country Name : {singelContact?.country?.name}</p>
+                                            <p className='text-center text-black'>phone : {singelContact?.phone} </p>
+                                        </div>
 
                                     </div>
 
